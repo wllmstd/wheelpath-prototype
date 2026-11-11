@@ -265,9 +265,6 @@ h2 { font-size: 21px; }
 .area-chip { align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 16px; border-radius: 22px; border: 0; background: #fff; color: var(--navy); font-weight: 700; font-size: 15px; box-shadow: var(--shadow); }
 .backdrop .sheet { width: 100%; max-width: 560px; }
 .auth { position: fixed; inset: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 18px; padding: calc(var(--sat) + 28px) 22px calc(28px + var(--sab)); max-width: 480px; margin: 0 auto; background: linear-gradient(180deg, var(--pale) 0%, #fff 55%); }
-.auth-hero { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 12px; text-align: center; min-height: 240px; }
-.auth-hero .wm { font-size: 34px; }
-.auth-hero .lead { font-size: 18px; max-width: 280px; }
 .auth h1 { font-size: 26px; }
 .auth .field input { min-height: 56px; font-size: 17px; }
 .auth fieldset.field { border: 0; padding: 0; margin: 0; }
@@ -301,3 +298,124 @@ h2 { font-size: 21px; }
 .auth-btn { height: 64px; border-radius: 32px; border: 0; background: var(--teal); color: #fff; font: 700 20px var(--font); margin-top: 8px; cursor: pointer; }
 .auth-switch { margin: 6px 0 0; display: flex; justify-content: center; align-items: center; gap: 10px; font-size: 18px; color: var(--muted); }
 .auth-switch .auth-link { align-self: center; }
+
+/* =====================================================================
+   Responsive sizing (applies to the whole app; later rules win)
+   Phones first, then small / short phones, then tablets and desktops.
+   Inputs stay at 16px so phones don't zoom in on focus.
+   ===================================================================== */
+html, body { font-size: 15px; }
+h1 { font-size: clamp(22px, 6vw, 28px); }
+h2 { font-size: clamp(17px, 4.6vw, 20px); }
+.small { font-size: 13.5px; }
+.lead { font-size: 15px; }
+.btn { min-height: 48px; font-size: 15.5px; padding: 0 18px; border-radius: 24px; }
+.btn.big { min-height: 52px; font-size: 16.5px; }
+.btn.sm { min-height: 42px; font-size: 14.5px; padding: 0 14px; }
+.icon-btn { width: 44px; height: 44px; }
+.icon-btn.solid { width: 46px; height: 46px; }
+.input { min-height: 46px; font-size: 16px; }
+.linkbtn { font-size: 15px; min-height: 40px; }
+
+/* map screens */
+.top { top: calc(var(--sat) + 10px); left: 10px; right: 10px; gap: 6px; }
+.searchbar { height: 50px; padding: 0 16px; font-size: 15.5px; border-radius: 25px; }
+.tobar { height: 46px; line-height: 46px; padding: 0 16px; border-radius: 23px; } .tobar b { font-size: 15.5px; }
+.area-chip { min-height: 38px; padding: 0 14px; font-size: 14px; }
+.zoom { top: calc(var(--sat) + 116px); right: 10px; border-radius: 14px; }
+.zoom button { width: 44px; height: 44px; font-size: 22px; }
+.map-badge { top: calc(var(--sat) + 116px); left: 10px; font-size: 11.5px; }
+.card { margin: 0 10px 10px; width: calc(100% - 20px) !important; padding: 14px 16px; gap: 8px; border-radius: 16px; }
+.sheet { padding: 14px 16px calc(12px + var(--sab)); gap: 10px; border-radius: 20px 20px 0 0; }
+.verdict { padding: 12px 14px; gap: 12px; border-radius: 16px; }
+.verdict h2 { font-size: 18px; } .v-meta { font-size: 14.5px; }
+.v-ic { width: 38px; height: 38px; } .big-ic { width: 54px; height: 54px; }
+.fab-report { min-height: 46px; padding: 0 18px; font-size: 15px; margin: 0 10px 10px auto; }
+.loc-card { margin: 0 10px 10px; width: calc(100% - 20px) !important; padding: 9px 14px; border-radius: 14px; }
+.tab { padding: 6px 0 8px; font-size: 12.5px; gap: 1px; } .tab svg { width: 22px; height: 22px; padding: 3px 12px; }
+.instr { padding: 10px 12px; gap: 10px; border-radius: 16px; } .instr b { font-size: 16.5px; } .instr-ic { width: 44px; height: 44px; }
+.big-stat { font-size: 15px; } .big-stat b { font-size: 22px; }
+.alt { min-height: 50px; padding: 6px 12px; }
+.links { gap: 0 12px; }
+.rate { gap: 6px; } .rate button { width: 44px; height: 44px; font-size: 22px; }
+.warn-box { padding: 12px; }
+
+/* pages */
+.page { padding: calc(var(--sat) + 14px) 14px calc(92px + var(--sab)); gap: 12px; }
+.pagehead { gap: 2px; }
+.h-sm { font-size: clamp(18px, 5vw, 21px); }
+.list { gap: 6px; } .list button { padding: 10px 12px; border-radius: 14px; }
+.hz-ic { width: 36px; height: 36px; border-radius: 10px; }
+.group { border-radius: 16px; }
+.toggle, .radio { padding: 12px 14px; gap: 12px; }
+.toggle i { width: 46px; height: 28px; } .toggle i::after { width: 22px; height: 22px; } .toggle input:checked + i::after { transform: translateX(18px); }
+.sec { font-size: 13px; margin-top: 4px; }
+.tiles { gap: 8px; } .tile { min-height: 52px; padding: 8px 12px; font-size: 14.5px; border-radius: 14px; }
+.stack { gap: 8px; } .choice { min-height: 48px; padding: 0 14px; font-size: 15px; border-radius: 14px; }
+.where { padding: 10px 12px; border-radius: 14px; }
+.form { gap: 14px; } .form legend { font-size: 15.5px; margin-bottom: 8px; }
+.btn.floating { right: 14px; bottom: calc(78px + var(--sab)); }
+.profile { padding: 12px 14px; } .avatar { width: 42px; height: 42px; font-size: 18px; }
+.toast { top: calc(var(--sat) + 10px); padding: 10px 14px; font-size: 14.5px; border-radius: 14px; }
+.toast.low { top: calc(var(--sat) + 120px); }
+
+/* log in / sign up */
+.auth-band { padding: calc(var(--sat) + 22px) 0 36px; gap: 12px; }
+.auth-band .wm { font-size: clamp(24px, 7vw, 32px); }
+.auth-hero { width: min(86%, 380px); }
+.auth-band.small { padding: calc(var(--sat) + 14px) 0 30px; gap: 4px; }
+.auth-band.small .wm { font-size: clamp(20px, 5.6vw, 26px); padding-left: 46px; }
+.auth-band.small .auth-hero { width: min(56%, 260px); }
+.auth-back { width: 44px; height: 44px; left: 12px; top: calc(var(--sat) + 10px); }
+.auth-sheet { margin-top: -26px; padding: 24px 20px calc(22px + var(--sab)); gap: 12px; border-radius: 26px 26px 0 0; }
+.auth-sheet h1 { font-size: clamp(24px, 7vw, 30px); }
+.auth-sub { margin: -6px 0 6px; font-size: 15px; }
+.auth-field { gap: 6px; font-size: 14.5px; }
+.auth-field input { height: clamp(46px, 12.5vw, 52px); padding: 0 16px; border-radius: 16px; font-size: 16px; }
+.auth-link { min-height: 36px; font-size: 15px; }
+.auth-note, .auth-hint { font-size: 13.5px; }
+.auth-btn { height: clamp(48px, 13vw, 52px); margin-top: 4px; border-radius: 26px; font-size: 16.5px; }
+.auth-switch { gap: 6px; font-size: 15px; flex-wrap: wrap; }
+
+/* short phones (landscape, small iPhones) */
+@media (max-height: 700px) {
+  .auth-band { padding-bottom: 32px; gap: 8px; } .auth-hero { width: min(64%, 280px); }
+  .auth-band.small .auth-hero { display: none; } .auth-band.small { padding-bottom: 40px; }
+  .auth-sheet { gap: 10px; }
+}
+@media (max-height: 620px) {
+  .auth-band { padding-top: calc(var(--sat) + 14px); padding-bottom: 30px; gap: 6px; } .auth-hero { width: min(48%, 190px); }
+  .auth-sheet { padding-top: 18px; gap: 8px; } .auth-sub { margin-bottom: 2px; }
+  .auth-field input, .auth-btn { height: 46px; }
+}
+@media (max-height: 520px) { .auth-band .auth-hero { display: none; } .auth-band { padding-bottom: 40px; } }
+
+/* very narrow phones */
+@media (max-width: 350px) {
+  html, body { font-size: 14px; }
+  .tile { font-size: 13.5px; min-height: 48px; }
+  .auth-sheet { padding-left: 16px; padding-right: 16px; }
+  .fab-report { padding: 0 14px; }
+}
+
+/* tablets and desktops: centred auth card, map panels on the left, pages in a readable column */
+@media (min-width: 768px) {
+  .auth-page { background: #94DCE4; align-items: center; justify-content: center; padding: 32px 24px; }
+  .auth-band, .auth-band.small { background: transparent; width: 100%; max-width: 460px; padding: 0 0 26px; }
+  .auth-band.small .auth-hero { display: block; }
+  .auth-back { top: -6px; left: 0; }
+  .auth-sheet { flex: none; margin-top: -10px; max-width: 460px; border-radius: 26px; padding: 30px 30px 28px; box-shadow: 0 12px 40px rgba(44, 52, 76, .16); }
+  .top { left: 16px; right: auto; width: 400px; margin: 0; }
+  .bottom { align-items: flex-start; padding-left: 16px; }
+  .bottom > * { max-width: 400px; }
+  .bottom .tabbar { border-radius: 16px 16px 0 0; border: 1px solid var(--line); border-bottom: 0; }
+  .card, .loc-card { margin-left: 0; margin-right: 0; width: 100% !important; }
+  .fab-report { margin-right: 0; }
+  .sheet { border-radius: 20px 20px 0 0; }
+  .zoom, .map-badge { top: 16px; } .map-badge { left: auto; right: 72px; }
+  .page { max-width: 600px; padding-left: 24px; padding-right: 24px; }
+  .page .tabbar { left: 50%; right: auto; width: 600px; max-width: 100%; transform: translateX(-50%); border-radius: 16px 16px 0 0; }
+  .btn.floating { right: calc(50% - 284px); }
+  .backdrop { align-items: center; }
+  .backdrop .sheet { border-radius: 20px; max-width: 460px; }
+}
